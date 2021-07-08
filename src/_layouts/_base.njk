@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ siteInfo.htmlLang | default('en') }}" class="app-template {{ htmlClasses }}">
+  <head>
+    <meta charset="utf-8">
+    <title{% if pageTitleLang %} lang="{{ pageTitleLang }}"{% endif %}>{% block pageTitle %}
+    {% if title %} {{ title }} - {% endif %}
+    {% if siteInfo.title %} {{ siteInfo.title }} {% else %} Opinionated Digital Studio 11ty Starter {% endif %} 
+    {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="{{ themeColor | default('#0b0c0c') }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="{{ siteInfo.publicPath | default('/public') }}/main.css"> 
+    <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/public/images/icons/favicon.ico" type="image/x-icon">
+
+    {% block head %}
+    {% endblock %}
+
+    {% block seo %}
+      <link rel="canonical" href="{{ siteInfo.url }}{{ page.url }}">
+      <meta name="description" content="{% if description %}{{ description }}{% else %}{{ siteInfo.description }}{% endif %}" />
+      <meta property="og:title" content="
+        {% if title %} {{ title }} - {% endif %}
+        {% if siteInfo.title %} {{ siteInfo.title }} {% else %} Opinionated Digital Studio 11ty Starter {% endif %} 
+      "/>
+      <meta property="og:url" content="{{ siteInfo.url }}{{ page.url }}" />
+      <meta property="og:type" content="{% if ogtype %}{{ ogtype }}{% else %} website{% endif %}">
+      <meta property="og:site_name" content="{{siteInfo.title}}">
+      <meta property="og:description" content="{% if description %}{{description}}{%else%}{{siteInfo.description}}{%endif%}" />
+      <meta name="twitter:title" content="
+        {% if title %} {{ title }} - {% endif %}
+        {% if siteInfo.title %} {{ siteInfo.title }} {% else %} Opinionated Digital Studio 11ty Starter {% endif %} 
+      "/>
+      <meta name="twitter:site" content="{{siteInfo.twitter}}">
+      <meta name="twitter:description" content="{% if description %}{{description}}{%else%}{{siteInfo.description}}{%endif%}" />
+      <meta name="twitter:creator" content="{{siteInfo.twitter}}">
+      {% if ignore %}
+        <meta name="robots" content="noindex"/>
+      {% else %}
+        <meta name="robots" content="index, follow" />
+      {% endif %}
+    {% endblock %}
+  </head>
+
+  {% block body %}
+  <body class="app-template__body">
+    {% include '_skip-link.njk' %}
+    {% include '_header.njk' %}
+
+    {% block main %}
+      <main>
+        {{ content | safe }}
+      </main>
+    {% endblock %}
+
+    {% include '_footer.njk' %}
+
+  </body>
+  {% endblock %}
+
+  {% block script %}
+    <script src="/public/main.js"></script>
+    <script>
+      App.run()
+    </script>
+  {% endblock %}
+</html>

@@ -1,0 +1,17 @@
+{% extends './_base.njk' %}
+
+{% block main %}
+  <main id="main">
+    <article class="app-article">
+      <div class="container">
+        <section>
+          <div class="grid-row">
+            <div class="grid-column-two-thirds-desktop">
+              {{ content | safe }}
+            </div>
+          </div>
+        </section>
+      </div>
+    </article>
+  </main>
+{% endblock %}

@@ -1,0 +1,10 @@
+@use '../settings/palette-application' as *;
+@use '~letters-and-spaces' as *;
+
+code {
+  display: block;
+  border: 1px solid get-color('black');
+  background-color: get-color('light-coral');
+  @include set-margin-responsive(0.5, top);
+  @include set-padding-responsive(0.5);
+}

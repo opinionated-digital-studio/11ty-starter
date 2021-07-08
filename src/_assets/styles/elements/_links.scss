@@ -1,0 +1,6 @@
+@use '../tools/links' as *;
+@use '../tools/focus' as *;
+
+a {
+  @include set-link-common;
+}

@@ -1,0 +1,22 @@
+@use '../settings/palette-application' as *;
+
+/* -----
+SVG Icons - svgicons.sparkk.fr
+----- */
+
+.svg-icon {
+  width: 1rem;
+  height: 1rem;
+  transform: translateY(0.2rem);
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: $body-text-color;
+}
+
+.svg-icon circle {
+  stroke: $body-text-color;
+  stroke-width: 1;
+}

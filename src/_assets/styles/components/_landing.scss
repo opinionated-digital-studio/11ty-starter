@@ -1,0 +1,145 @@
+@use '../tools/type' as *;
+@use '../tools/color' as *;
+@use '~letters-and-spaces' as *;
+
+.app-landing {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-landing__inner {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app-landing__title-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  @include media-query($from: desktop) {
+    display: block;
+  }
+}
+
+.app-landing__title {
+  text-align: center;
+  @include set-type-bold;
+  margin-bottom: 0;
+  color: get-color('blue');
+
+  @include media-query($from: desktop) {
+    @include set-font-size-fixed(12, desktop);
+    @include set-padding-responsive(1, bottom);
+
+    span {
+      display: inline-block;
+    }
+
+    span:nth-child(2),
+    span:nth-child(3) {
+      transform: translateY(2rem);
+    }
+
+    span:nth-child(6),
+    span:nth-child(7) {
+      transform: translateY(-2rem);
+    }
+  }
+}
+
+.app-landing__cta {
+  text-align: center;
+}
+
+.app-landing__version {
+  display: block;
+  color: get-color('blue');
+  text-align: center;
+  @include media-query($from: desktop) {
+    text-align: left;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.app-landing__star {
+  position: absolute;
+  display: none;
+
+  @include media-query($from: desktop) {
+    display: block;
+  }
+}
+
+.app-landing__star-path {
+  fill: #203059;
+}
+
+#landing-star-1 {
+  width: 4ex;
+  left: -7.5rem;
+  top: 50%;
+}
+
+#landing-star-2 {
+  width: 2ex;
+  left: -3.5rem;
+}
+
+#landing-star-3 {
+  width: 1.8ex;
+  left: -2rem;
+  top: 80%;
+}
+
+#landing-star-4 {
+  width: 3.4ex;
+  left: 6rem;
+  top: 1.2rem;
+}
+
+#landing-star-5 {
+  width: 1.6ex;
+  left: 9rem;
+  top: 0.5rem;
+}
+
+#landing-star-6 {
+  width: 2.4ex;
+  right: -3rem;
+  top: 3rem;
+}
+
+#landing-star-7 {
+  width: 4ex;
+  right: -5rem;
+  top: 7rem;
+}
+
+#landing-star-8 {
+  width: 2ex;
+  right: -6.5rem;
+  top: 4.4rem;
+}
+
+#landing-star-9 {
+  width: 1.8ex;
+  right: -8rem;
+  top: 2rem;
+}
+
+#landing-star-10 {
+  width: 1.8ex;
+  right: 6.5rem;
+  bottom: 2.2rem;
+}
+
+#landing-star-11 {
+  width: 2.5ex;
+  right: 8.5rem;
+  bottom: 1.4rem;
+}

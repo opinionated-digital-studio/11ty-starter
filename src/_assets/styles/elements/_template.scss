@@ -1,0 +1,15 @@
+@use '../settings/palette-application' as *;
+@use '../tools/type' as *;
+
+.app-template {
+  background-color: $body-background-color;
+}
+
+.app-template__body {
+  @include set-type-common;
+  background-color: $body-background-color;
+  color: $body-text-color;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

@@ -1,0 +1,82 @@
+@use '~letters-and-spaces' as *;
+@use '../tools' as *;
+
+.app-header {
+  @include set-padding-responsive(0.5, top);
+  @include set-padding-responsive(0.5, bottom);
+
+  @include media-query($from: desktop) {
+    padding: 0;
+  }
+}
+
+.app-header__inner {
+  @include media-query($from: desktop) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.app-header__menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  transform: translateX(-1rem);
+  flex-wrap: wrap;
+
+  @include media-query(desktop) {
+    transform: translateX(1rem);
+  }
+}
+
+.app-header__logo {
+  transform: translateX(-1rem);
+  @include set-type-bold;
+
+  @include media-query($until: tablet) {
+    @include set-font-size-fixed(8);
+  }
+
+  @include media-query($until: desktop) {
+    @include set-font-size-fixed(8, tablet);
+  }
+}
+
+.app-header__menu-item,
+.app-header__logo {
+  @include set-padding-responsive(0.5, top);
+  @include set-padding-responsive(0.5, bottom);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+}
+
+.app-header__logo-link {
+  text-decoration: none;
+}
+
+.app-header__menu-link,
+.app-header__logo-link {
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.app-header__menu-item--current {
+  .app-header__menu-link {
+    @include set-link-common(get-color('blue'));
+
+    &:link,
+    &:visited {
+      text-decoration-thickness: 3px;
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@use '../tools/color' as *;
+@forward '../tools/color';
+
+$body-background-color: get-color('coral');
+$body-text-color: get-color('black');
+$link-color: $body-text-color;
+$link-hover-color: get-color('dark-coral');
+$focus-background-color: get-color('yellow');
+$focus-text-color: get-color('black');

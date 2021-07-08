@@ -1,0 +1,9 @@
+@use '../settings/palette' as *;
+
+@function get-color($color) {
+  @if map-has-key($colors, $color) {
+    @return map-get($colors, $color);
+  } @else {
+    @warn 'Color #{$color} does not exist in palette $colors';
+  }
+}

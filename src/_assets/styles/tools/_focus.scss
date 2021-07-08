@@ -1,0 +1,8 @@
+@use '../settings/palette-application' as *;
+
+@mixin set-focused {
+  background-color: $focus-background-color !important;
+  color: $focus-text-color !important;
+  box-shadow: 0 0 0 4px $focus-text-color !important;
+  text-decoration: none !important;
+}

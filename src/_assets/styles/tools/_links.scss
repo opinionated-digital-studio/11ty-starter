@@ -1,0 +1,19 @@
+@use '../settings/palette-application' as *;
+@use 'focus' as *;
+
+@mixin set-link-common($color: $link-color, $hover-color: $link-hover-color) {
+  &:link,
+  &:visited {
+    color: $color;
+    text-decoration-thickness: 1px;
+  }
+
+  &:hover {
+    color: $hover-color;
+    text-decoration-thickness: 3px;
+  }
+
+  &:focus {
+    @include set-focused;
+  }
+}

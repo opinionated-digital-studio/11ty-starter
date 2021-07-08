@@ -1,0 +1,39 @@
+@use '../settings/' as *;
+
+@mixin _set-font-face {
+  @at-root {
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: normal;
+      src:
+        url(#{$font-url} + '/Inter-Regular.woff') format('woff'),
+        url(#{$font-url} + '/Inter-Regular.woff2') format('woff2');
+      font-display: fallback;
+    }
+
+    @font-face {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: bold;
+      src:
+        url(#{$font-url} + '/Inter-Black.woff') format('woff'),
+        url(#{$font-url} + '/Inter-Black.woff2') format('woff2');
+      font-display: fallback;
+    }
+  }
+}
+
+@mixin set-type-common($font-family: $font-family-sans) {
+  font-family: $font-family;
+
+  @include _set-font-face;
+}
+
+@mixin set-type-bold {
+  font-weight: $font-weight-bold; 
+}
+
+@mixin set-type-normal {
+  font-weight: $font-weight-normal;
+}

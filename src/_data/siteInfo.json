@@ -1,0 +1,8 @@
+{
+  "title": "Lunetten",
+  "description": "An eleventy starter project using Webpack, Babel and SASS for creating beautiful websites.",
+  "url": "https://lunetten.dev",
+  "author": "Opinionated Digital Studio",
+  "twitter": "@pandu_yono",
+  "assetPath": "/public"
+}

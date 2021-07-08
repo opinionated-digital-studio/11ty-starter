@@ -1,0 +1,11 @@
+@use '~letters-and-spaces' as *;
+
+.app-footer {
+  @include set-padding-responsive(2, top);
+  @include set-padding-responsive(0.5, bottom);
+  margin-top: auto;
+}
+
+.app-footer__inner {
+  text-align: center;
+}
