@@ -15,7 +15,8 @@ on the Modular Typographic Scale.
 1. Git clone or fork this repository: `git clone https://github.com/opinionated-digital-studio/lunetten.git`
 2. Change your current working directory to the project directory: `cd lunetten` 
 3. Install the project's dependencies: `npm install`
-4. Spin up a dev server and watch for file changes: `npm run dev`
+4. Edit the global metadata for your site at src/_data/siteInfo.json
+5. Spin up a dev server and watch for file changes: `npm run dev`
 
 ### Building production files
 
